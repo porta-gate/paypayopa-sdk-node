@@ -13,7 +13,7 @@ jest.mock("https", () => ({
     }),
 }));
 
-var httpsRequestMock: any;
+let httpsRequestMock: any;
 
 test("httpsClient.httpsCall 200 handle empty response", () => {
     jest.clearAllMocks();

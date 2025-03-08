@@ -1,6 +1,7 @@
 import { payPayRestSDK } from "../src/lib/paypay-rest-sdk";
 import { HttpsClient } from '../src/lib/httpsClient';
-const { v4: uuidv4 } = require('uuid');
+import {v4 as uuidv4} from "uuid";
+
 
 const conf = {
     clientId: '5345435fsdfsr54353454',

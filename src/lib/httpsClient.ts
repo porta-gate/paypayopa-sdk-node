@@ -43,7 +43,7 @@ export class HttpsClient {
     const apiName = options.apiKey;
     delete options.apiKey; // Delete key to avoid any potential errors
     const req = https.request(options, (res) => {
-      status = res?.statusCode!;
+      status = res.statusCode!;
       res.setEncoding("utf8");
       res.on("data", (chunk) => {
         body += Buffer.from(chunk);

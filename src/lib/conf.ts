@@ -3,19 +3,19 @@ import { HOST_PATH } from "./environments";
 
 export interface Config {
   PORT_NUMBER?: number;
-  API_PAYMENT: {};
-  API_WALLET: {};
-  API_DIRECT_DEBIT: {};
-  API_APP_INVOKE: {};
-  API_WEB_CASHIER: {};
-  API_ACCOUNT_LINK: {};
-  API_SUBSCRIPTION: {};
+  API_PAYMENT: object;
+  API_WALLET: object;
+  API_DIRECT_DEBIT: object;
+  API_APP_INVOKE: object;
+  API_WEB_CASHIER: object;
+  API_ACCOUNT_LINK: object;
+  API_SUBSCRIPTION: object;
 }
 
 export class Conf {
   private readonly configLookup: any;
-  private portNumber: number;
-  private hostName: string;
+  private readonly portNumber: number;
+  private readonly hostName: string;
 
   constructor({ hostName, portNumber }: { hostName: string, portNumber?: number }) {
     this.configLookup = JSON.parse(JSON.stringify(defaultPathConfig));

@@ -475,5 +475,5 @@ class PayPayRestSDK {
 /**
  * These are methods and variables that are exposed to end-user
  */
-export let payPayRestSDK = new PayPayRestSDK();
+export const payPayRestSDK = new PayPayRestSDK();
 export { PayPayRestSDK };
