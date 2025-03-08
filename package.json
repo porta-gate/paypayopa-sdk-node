@@ -1,7 +1,7 @@
 {
   "author": "PayPay OPA SDK",
   "name": "@porta-gate/paypayopa-sdk-node",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Node.js SDK for PayPay APIs",
   "publishConfig": {
     "access": "public"
@@ -18,7 +18,7 @@
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ky0615/paypayopa-sdk-node.git"
+    "url": "git+https://github.com/porta-gate/paypayopa-sdk-node.git"
   },
   "scripts": {
     "build-fast": "tsup src/index.ts --format cjs,esm",
