@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2019",
-    "module": "commonjs",
-    "lib": ["es2020"],
-    "allowJs": true,
-    "declaration": true,
+    "target": "ES2024",
+    "module": "ESNext",
+    "lib": ["ES2024"],
     "outDir": "dist",
-    "removeComments": true,
-
+    "allowJs": false,
     "strict": true,
+    "noEmit": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
