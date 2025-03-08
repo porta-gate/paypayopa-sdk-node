@@ -1,53 +1,53 @@
-import * as defaultPathConfig from "./conf.path.json";
-import { HOST_PATH } from "./environments";
+import * as defaultPathConfig from './conf.path.json'
+import { HOST_PATH } from './environments'
 
 export interface Config {
-  PORT_NUMBER?: number;
-  API_PAYMENT: object;
-  API_WALLET: object;
-  API_DIRECT_DEBIT: object;
-  API_APP_INVOKE: object;
-  API_WEB_CASHIER: object;
-  API_ACCOUNT_LINK: object;
-  API_SUBSCRIPTION: object;
+    PORT_NUMBER?: number
+    API_PAYMENT: object
+    API_WALLET: object
+    API_DIRECT_DEBIT: object
+    API_APP_INVOKE: object
+    API_WEB_CASHIER: object
+    API_ACCOUNT_LINK: object
+    API_SUBSCRIPTION: object
 }
 
 export class Conf {
-  private readonly configLookup: any;
-  private readonly portNumber: number;
-  private readonly hostName: string;
+    private readonly configLookup: any
+    private readonly portNumber: number
+    private readonly hostName: string
 
-  constructor({ hostName, portNumber }: { hostName: string, portNumber?: number }) {
-    this.configLookup = JSON.parse(JSON.stringify(defaultPathConfig));
-    this.hostName = hostName;
-    this.portNumber = portNumber || 443;
-  }
-
-  static forEnvironment(env: 'PROD' | 'STAGING' | 'PERF_MODE'): Conf {
-    const hostName = HOST_PATH[env];
-    if (!hostName) {
-      throw new Error('no built-in environment named `' + env + '`');
+    constructor({ hostName, portNumber }: { hostName: string; portNumber?: number }) {
+        this.configLookup = JSON.parse(JSON.stringify(defaultPathConfig))
+        this.hostName = hostName
+        this.portNumber = portNumber || 443
     }
-    return new Conf({ hostName });
-  }
 
-  getHttpsMethod(nameApi: string, nameMethod: string): string {
-    return this.configLookup[nameApi][nameMethod].METHOD;
-  }
+    static forEnvironment(env: 'PROD' | 'STAGING' | 'PERF_MODE'): Conf {
+        const hostName = HOST_PATH[env]
+        if (!hostName) {
+            throw new Error('no built-in environment named `' + env + '`')
+        }
+        return new Conf({ hostName })
+    }
 
-  getHttpsPath(nameApi: string, nameMethod: string): string {
-    return this.configLookup[nameApi][nameMethod].PATH;
-  }
+    getHttpsMethod(nameApi: string, nameMethod: string): string {
+        return this.configLookup[nameApi][nameMethod].METHOD
+    }
 
-  getApiKey(nameApi: string, nameMethod: string): string | undefined {
-    return this.configLookup[nameApi][nameMethod].API_NAME;
-  }
+    getHttpsPath(nameApi: string, nameMethod: string): string {
+        return this.configLookup[nameApi][nameMethod].PATH
+    }
 
-  getHostname() {
-    return this.hostName;
-  }
+    getApiKey(nameApi: string, nameMethod: string): string | undefined {
+        return this.configLookup[nameApi][nameMethod].API_NAME
+    }
 
-  getPortNumber() {
-    return this.portNumber;
-  }
+    getHostname() {
+        return this.hostName
+    }
+
+    getPortNumber() {
+        return this.portNumber
+    }
 }
