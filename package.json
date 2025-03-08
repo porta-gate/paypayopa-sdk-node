@@ -1,7 +1,7 @@
 {
   "author": "PayPay OPA SDK",
   "name": "@porta-gate/paypayopa-sdk-node",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Node.js SDK for PayPay APIs",
   "publishConfig": {
     "access": "public"

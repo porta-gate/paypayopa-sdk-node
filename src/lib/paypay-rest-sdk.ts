@@ -4,9 +4,11 @@
 import { Auth } from './auth'
 import { Conf } from './conf'
 import { HttpsClient, HttpsClientError, HttpsClientMessage, HttpsClientSuccess } from './httpsClient'
-import { HmacSHA256, enc, algo } from 'crypto-js'
+import CryptoJs from 'crypto-js'
 import { v4 as uuidv4 } from 'uuid'
 import * as jwt from 'jsonwebtoken'
+
+const { HmacSHA256, enc, algo } = CryptoJs
 
 interface Endpoint {
     method: string
