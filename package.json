@@ -1,22 +1,31 @@
 {
   "author": "PayPay OPA SDK",
-  "name": "@paypayopa/paypayopa-sdk-node",
+  "name": "@porta-gate/paypayopa-sdk-node",
   "version": "0.0.0",
   "description": "Node.js SDK for PayPay APIs",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
+  },
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paypay/paypayopa-sdk-node.git"
+    "url": "git+https://github.com/ky0615/paypayopa-sdk-node.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build-fast": "tsup src/index.ts --format cjs,esm",
+    "build": "tsup src/index.ts --format cjs,esm --dts-resolve",
     "prepublishOnly": "npm run build",
     "test": "jest",
     "coverage": "jest --coverage",
     "clean": "rm -rf ./.nyc_output ./node_modules/.cache ./coverage",
     "lint": "npm-run-all lint:*",
-    "lint:code": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content --max-warnings 0 --format codeframe --flag unstable_ts_config .",
+    "lint:code": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content --max-warnings 0 --format codeframe .",
     "fix": "npm-run-all fix:*",
     "fix:code": "npm run lint:code -- --fix",
     "fix:prettier": "prettier --config .prettierrc --ignore-path .prettierignore --cache --cache-location node_modules/.cache/prettier-cache/ --cache-strategy content  --write '**/*.{js,json,html,vue,ts,jsx,tsx,mjs,tjs,cjs}'",
@@ -58,6 +67,7 @@
     "nyc": "^17.1.0",
     "prettier": "^3.5.3",
     "ts-jest": "^29.2.6",
+    "tsup": "^8.4.0",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.26.0"
   },
@@ -65,7 +75,7 @@
     "doc": "docs"
   },
   "bugs": {
-    "url": "https://github.com/paypay/paypayopa-sdk-node/issues"
+    "url": "https://github.com/porta-gate/paypayopa-sdk-node/issues"
   },
   "homepage": "https://github.com/paypay/paypayopa-sdk-node#readme"
 }

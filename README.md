@@ -1,18 +1,18 @@
 # Paypay OPA SDK - Node
 
 [![License](https://img.shields.io/:license-apache2.0-red.svg)](https://opensource.org/licenses/Apache-2.0)
-[![npm](https://img.shields.io/npm/v/@paypayopa/paypayopa-sdk-node)](https://www.npmjs.com/package/@paypayopa/paypayopa-sdk-node)
-[![Build Status](https://travis-ci.org/paypay/paypayopa-sdk-node.svg?branch=master)](https://travis-ci.org/paypay/paypayopa-sdk-node)
-[![Coverage Status](https://coveralls.io/repos/github/paypay/paypayopa-sdk-node/badge.svg?branch=master)](https://coveralls.io/github/paypay/paypayopa-sdk-node?branch=master)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/paypay/paypayopa-sdk-node.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/paypay/paypayopa-sdk-node/context:javascript)
-[![Maintainability](https://api.codeclimate.com/v1/badges/e3cf7a7e9153531b0f48/maintainability)](https://codeclimate.com/github/paypay/paypayopa-sdk-node/maintainability)
-[![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/paypay/paypayopa-sdk-node/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/paypay/paypayopa-sdk-node/branches/master)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpaypay%2Fpaypayopa-sdk-node.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpaypay%2Fpaypayopa-sdk-node?ref=badge_shield)
-[![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/paypay/paypayopa-sdk-node)](https://app.snyk.io/org/paypay-62f/)
+[![npm](https://img.shields.io/npm/v/@porta-gate/paypayopa-sdk-node)](https://www.npmjs.com/package/@porta-gate/paypayopa-sdk-node)
+[![Build Status](https://travis-ci.org/porta-gate/paypayopa-sdk-node.svg?branch=master)](https://travis-ci.org/porta-gate/paypayopa-sdk-node)
+[![Coverage Status](https://coveralls.io/repos/github/porta-gate/paypayopa-sdk-node/badge.svg?branch=master)](https://coveralls.io/github/porta-gate/paypayopa-sdk-node?branch=master)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/porta-gate/paypayopa-sdk-node.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/porta-gate/paypayopa-sdk-node/context:javascript)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e3cf7a7e9153531b0f48/maintainability)](https://codeclimate.com/github/porta-gate/paypayopa-sdk-node/maintainability)
+[![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/porta-gate/paypayopa-sdk-node/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/porta-gate/paypayopa-sdk-node/branches/master)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fporta-gate%2Fpaypayopa-sdk-node.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fporta-gate%2Fpaypayopa-sdk-node?ref=badge_shield)
+[![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/porta-gate/paypayopa-sdk-node)](https://app.snyk.io/org/paypay-62f/)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=paypay_paypayopa-sdk-node&metric=alert_status)](https://sonarcloud.io/dashboard?id=paypay_paypayopa-sdk-node)
-[![npm](https://img.shields.io/npm/dm/@paypayopa/paypayopa-sdk-node)](https://www.npmjs.com/package/@paypayopa/paypayopa-sdk-node)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b17690606bb64c51a1c65c65a8a75b1f)](https://app.codacy.com/gh/paypay/paypayopa-sdk-node?utm_source=github.com&utm_medium=referral&utm_content=paypay/paypayopa-sdk-node&utm_campaign=Badge_Grade_Settings)
-[![BCH compliance](https://bettercodehub.com/edge/badge/paypay/paypayopa-sdk-node?branch=master)](https://bettercodehub.com/)
+[![npm](https://img.shields.io/npm/dm/@porta-gate/paypayopa-sdk-node)](https://www.npmjs.com/package/@porta-gate/paypayopa-sdk-node)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b17690606bb64c51a1c65c65a8a75b1f)](https://app.codacy.com/gh/porta-gate/paypayopa-sdk-node?utm_source=github.com&utm_medium=referral&utm_content=porta-gate/paypayopa-sdk-node&utm_campaign=Badge_Grade_Settings)
+[![BCH compliance](https://bettercodehub.com/edge/badge/porta-gate/paypayopa-sdk-node?branch=master)](https://bettercodehub.com/)
 
 So you are a developer and want to start accepting payments using PayPay. PayPay's Payment SDK is the simplest way to achieve the integration. With PayPay's Payment SDK, you can build a custom Payment checkout process to suit your unique business needs and branding guidelines.
 
@@ -38,7 +38,7 @@ Once you have understood the payment flow, before we start the integration make 
 
 ### Install npm package
 ```sh
-$ npm i @paypayopa/paypayopa-sdk-node
+$ npm i @porta-gate/paypayopa-sdk-node
 ```
 ## Getting Started
 Before making any API calls, you must configure your API key, API secret, and which environment you are using.
@@ -46,9 +46,8 @@ Before making any API calls, you must configure your API key, API secret, and wh
 For a production API key and API secret, use the `"PROD"` environment name:
 
 
-```javascript
-'use strict';
-const PAYPAY = require('@paypayopa/paypayopa-sdk-node');
+```typescript
+import * as PAYPAY from '@porta-gate/paypayopa-sdk-node';
 PAYPAY.Configure({
     // Use production mode.
     env: "PROD",
@@ -61,9 +60,8 @@ PAYPAY.Configure({
 
 To work in sandbox mode, specify your sandbox API key and API secret, and `"STAGING"` as the environment name. `"STAGING"` is the default, so you can also omit the `env`.
 
-```javascript
-'use strict';
-const PAYPAY = require('@paypayopa/paypayopa-sdk-node');
+```typescript
+import * as PAYPAY from '@porta-gate/paypayopa-sdk-node';
 PAYPAY.Configure({
     // Use sandbox mode (this is the default).
     env: "STAGING",
@@ -87,7 +85,7 @@ In order to receive payments using this flow, first of all you will need to crea
 
 For details of all the request and response parameters , check our [API Documentation guide](https://www.paypay.ne.jp/opa/doc/v1.0/dynamicqrcode#operation/createQRCode)
 
-```javascript
+```typescript
 let payload = {
     merchantPaymentId: "my_payment_id",
     amount: {
@@ -120,8 +118,8 @@ Now that you have created a Code, the next  step is to implement polling to get 
 |merchantPaymentId   |  Yes |string <= 64 characters  |The unique payment transaction id provided by merchant   |
 
 ### Fetch a particular QR CODE payment details
-```javascript
-let merchantPaymentId = 'merchantPaymentId';
+```typescript
+const merchantPaymentId = 'merchantPaymentId';
 
 const response = await PAYPAY.GetCodePaymentDetails([merchantPaymentId]);
 const body = response.BODY;
@@ -683,5 +681,5 @@ There are two ways to react with this situation:
 
 
 ## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpaypay%2Fpaypayopa-sdk-node.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpaypay%2Fpaypayopa-sdk-node?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fporta-gate%2Fpaypayopa-sdk-node.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fporta-gate%2Fpaypayopa-sdk-node?ref=badge_large)
 
